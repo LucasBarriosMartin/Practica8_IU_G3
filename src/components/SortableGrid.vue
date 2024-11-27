@@ -7,6 +7,8 @@
 <template>
   <table v-if="filteredData.length">
     <thead>
+       <tr v-for="entry in filteredData" :key="entry.id"></tr>
+        @click="$emit('selectOne', entry.id)">
       <tr>        
         <th v-for="col in columns" :key="col.key"
           @click="sortBy(col.key)"

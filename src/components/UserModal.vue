@@ -1,6 +1,6 @@
 <template>
     <BaseModal ref="modalRef" id="userAddOrEditModal"
-      :title="isAdd ? 'Añadiendo nuevo usuario' : 'Editando usuario'" 
+      :title="isAdd ? 'Añadiendo nuevo usuario' : 'Editando profesor'" 
       :name="name">
       <template #body>
         <form id="addOrEditUserForm" 

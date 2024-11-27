@@ -30,8 +30,8 @@
 
     <h5>Acciones</h5>
     <div class="btn-group">
-      <button @click="$emit('editSubject')" class="btn btn-outline-success">✏️</button>
-      <button @click="$emit('rmSubject')" class="btn btn-outline-danger">🗑️</button>
+      <button @click="$emit('editSubject')" title="Editar asignatura" class="btn btn-outline-success">✏️</button>
+      <button @click="$emit('rmSubject')" title="Borrar asignatura" class="btn btn-outline-danger">🗑️</button>
     </div>
 </template>
 

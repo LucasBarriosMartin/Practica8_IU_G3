@@ -6,15 +6,15 @@
       <a class="navbar-brand" href="#">PlanDoc</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span title="Menú" class="navbar-toggler-icon"></span>
       </button>
-
+      
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a href="#" aria-current="page"
               :class="`nav-link active ${gState.currentListing == 'users' ? 'boxed' : ''}`"
-              @click="gState.currentListing = 'users'">Usuarios</a>
+              @click="gState.currentListing = 'users'">Profesores</a>
           </li>
           <li class="nav-item">
             <a href="#" aria-current="page"
@@ -32,13 +32,6 @@
               @click="gState.currentListing = 'locations'">Espacios</a>
           </li>
         </ul>
-        <div class="nav-item ms-auto">
-          <div class="btn-group">
-            <button id="save" class="btn btn-outline-secondary">💾</button>
-            <button id="clean" class="btn btn-outline-secondary">🧽</button>
-            <button id="restore" class="btn btn-outline-secondary">↩️</button>
-          </div>
-        </div>
       </div>
     </div>
   </nav>
@@ -52,7 +45,7 @@
       <!-- columna izquierda (opcional): listado de usuarios -->
       <div v-if="gState.currentListing == 'users'" id="div-users" class="col-md">
         <div>
-          <h5 class="d-inline">Usuarios
+          <h5 class="d-inline">Profesores
           </h5>
           <a class="d-inline d-sm-none details" href="#div-details">↘️</a>
         </div>
@@ -124,6 +117,7 @@
     </div>
   </div>
 
+
   <!-- 
     Modal para crear/editar usuario
     siempre usamos el mismo, y no se muestra hasta que hace falta
@@ -131,6 +125,14 @@
   <UserModal ref="userModalRef" :key="userToAddOrEdit.id" :user="userToAddOrEdit" :isAdd="userToAddOrEdit.id == -1"
     @add="(o) => { console.log('adding', o); gState.model.addUser(o); gState.key++ }"
     @edit="(o) => { console.log('setting', o); gState.model.setUser(o); gState.key++ }" />
+
+  <!-- Modal para confirmar eliminación -->
+  <ConfirmationModal 
+    ref="confirmRemoveModal" 
+    :message="'Are you sure you want to remove this user?'" 
+    @confirm="handleRemoveUser" 
+  />
+
   <!-- 
     Modal para crear/editar asignatura
     siempre usamos el mismo, y no se muestra hasta que hace falta

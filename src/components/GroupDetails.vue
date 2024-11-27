@@ -30,8 +30,8 @@
 
   <h5>Acciones</h5>
   <div class="btn-group">
-    <button @click="$emit('editGroup')" class="btn btn-outline-success">✏️</button>
-    <button @click="$emit('rmGroup')" class="btn btn-outline-danger">🗑️</button>
+    <button @click="$emit('editGroup')" title="Editar grupo" class="btn btn-outline-success">✏️</button>
+    <button @click="$emit('rmGroup')" title="Borrar grupo" class="btn btn-outline-danger">🗑️</button>
   </div>
 </template>
 
