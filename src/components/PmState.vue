@@ -12,22 +12,22 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a href="#" aria-current="page"
+            <a href="#" aria-current="page" title="Gestionar o consultar profesores"
               :class="`nav-link active ${gState.currentListing == 'users' ? 'boxed' : ''}`"
               @click="gState.currentListing = 'users'">Profesores</a>
           </li>
           <li class="nav-item">
-            <a href="#" aria-current="page"
+            <a href="#" aria-current="page" title="Gestionar o consultar asignaturas"
               :class="`nav-link active ${gState.currentListing == 'subjects' ? 'boxed' : ''}`"
               @click="gState.currentListing = 'subjects'">Asignaturas</a>
           </li>
           <li class="nav-item">
-            <a href="#" aria-current="page"
+            <a href="#" aria-current="page" title="Gestionar o consultar grupos"
               :class="`nav-link active ${gState.currentListing == 'groups' ? 'boxed' : ''}`"
               @click="gState.currentListing = 'groups'">Grupos</a>
           </li>
           <li class="nav-item">
-            <a href="#" aria-current="page"
+            <a href="#" aria-current="page" title="Gestionar o consultar espacios (aulas y laboratorios)"
               :class="`nav-link active ${gState.currentListing == 'locations' ? 'boxed' : ''}`"
               @click="gState.currentListing = 'locations'">Espacios</a>
           </li>
